@@ -1,0 +1,28 @@
+
+<h1>el nombre del alumno es {{alumno.nombre}}</h1>
+
+<button (click)="decrementar()">-</button>
+<span>{{alumno.edad}}</span>
+<button (click)="incrementar()">+</button>
+<br>
+<div>
+    <button [disabled]="DisabledFlag" (click)="ClaseDinamica='green'">verde</button>
+    <button (click)="ClaseDinamica='rojo'">rojo</button>
+</div>
+
+<p [class]="ClaseDinamica"  >change my colors!</p>
+
+<button (click)="DisabledFlag=!DisabledFlag"> desactivar/activar</button>
+
+<p *ngIf="alumno.edad>=18; else menores">solo para mayores de 18</p>
+
+<ng-template #menores>
+    <p>para menores</p>
+</ng-template>
+
+<ul>
+    <li *ngFor="let alumno of alumnos; let i=index"> {{alumno.nombre}} {{i}}</li>  
+</ul>
+
+
+
