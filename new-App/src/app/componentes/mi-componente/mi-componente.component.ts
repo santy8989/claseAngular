@@ -28,7 +28,7 @@ export class MiComponenteComponent {
     {nombre:"santi",
     edad:18,
     CantPositivos:2},
-    {nombre:"pepe",
+    {nombre:"pepa",
     edad:45,
     CantPositivos:2}
 
