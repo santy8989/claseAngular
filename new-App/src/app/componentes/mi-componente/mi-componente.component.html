@@ -1,9 +1,17 @@
-
+<section>
+<p>Inicio componente padre (mi componente, color verde)</p>
 <h1>el nombre del alumno es {{alumno.nombre}}</h1>
-
+<div>
+<p>modifique la edad del alumno</p>
 <button (click)="decrementar()">-</button>
 <span>{{alumno.edad}}</span>
 <button (click)="incrementar()">+</button>
+<p *ngIf="alumno.edad>=18; else menores">solo para mayores de 18</p>
+
+<ng-template #menores>
+    <p>para menores</p>
+</ng-template>
+</div>
 <br>
 <div>
     <button [disabled]="DisabledFlag" (click)="ClaseDinamica='green'">verde</button>
@@ -12,17 +20,17 @@
 
 <p [class]="ClaseDinamica"  >change my colors!</p>
 
-<button (click)="DisabledFlag=!DisabledFlag"> desactivar/activar</button>
+<span>boton "verde"</span><button (click)="DisabledFlag=!DisabledFlag"> desactivar/activar</button>
 
-<p *ngIf="alumno.edad>=18; else menores">solo para mayores de 18</p>
 
-<ng-template #menores>
-    <p>para menores</p>
-</ng-template>
 
 <ul>
     <li *ngFor="let alumno of alumnos; let i=index"> {{alumno.nombre}} {{i}}</li>  
 </ul>
 
+
+<app-componente-hijo [nombre]="alumno.nombre" (InputChangeCustomEvent)="alumno.nombre=$event" ></app-componente-hijo>
+<p>final componente padre (mi componente, color verde)</p>
+</section>
 
 
