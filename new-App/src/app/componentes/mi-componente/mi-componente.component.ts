@@ -15,26 +15,17 @@ export class MiComponenteComponent {
   DisabledFlag:boolean=false
 
    alumno:Alumno={
-    nombre:"jorge",
+    nombre:"nuevoAlumno",
     edad:21,
     CantPositivos:2
 
    }
 
-   alumnos:Alumno[]=[
-    {nombre:"jorge",
-    edad:21,
-    CantPositivos:2},
-    {nombre:"santi",
-    edad:18,
-    CantPositivos:2},
-    {nombre:"pepa",
-    edad:45,
-    CantPositivos:2}
-
-   ]
+   alumnos:Alumno[]=[]
    
-
+   constructor(){
+    this.alumnos.push(this.alumno)
+  }
    incrementar(){
     this.alumno.edad++
     // console.log(this.nombre)
